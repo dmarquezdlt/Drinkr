@@ -3,7 +3,6 @@ get "/" do
 end
 
 post "/new_request" do
-  p params
   coordinates = {
     latitude: params[:latitude].to_f,
     longitude: params[:longitude].to_f
@@ -12,10 +11,16 @@ post "/new_request" do
   parameters = {
     term: params[:term],
     limit: 4,
-    category: "bars"
+    category: "divebars, cocktailbars"
   }
-  p parameters
   @search = Yelp.client.search_by_coordinates(coordinates,parameters)
-  p @search
-  erb :results
+  @search.businesses.each do |place|
+    p place.name
+    p place.url
+    p place.image_url
+    p place.rating
+    p place.snippet_text
+    p place.categories
+    p "__________________________________________"
+  end
 end
