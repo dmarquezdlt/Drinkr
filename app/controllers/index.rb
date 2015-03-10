@@ -22,7 +22,9 @@ post "/new_request" do
     address: nil,
     url: nil,
     image: nil,
-    category: nil}
+    category: nil,
+    description: nil
+  }
 
   @yelp_search = Yelp.client.search_by_coordinates(coordinates,parameters)
   @yelp_search.businesses.map! do |x|
@@ -32,6 +34,7 @@ post "/new_request" do
     @results[:url] = x.url
     @results[:image] = x.image_url
     @results[:category] = x.categories
+    @results[:description] = x.snippet_text
     erb :results
   end
 end

@@ -4,9 +4,8 @@
     <div class="business_listing">
       <h3><a href="<%= @results[:url] %>"><%= @results[:name] %></a></h3>
       <h5><%= @results[:rating] %></h5>
-      <p><a href="http://maps.google.com/?q=<%=@results[:address] %>"><%= @results[:address] %></a></p>
       <img src="<%= @results[:image] %>" class="business_name"/>
-      <p><%= @results[:category] %></p>
+      <p><a href="http://maps.google.com/?q=<%=@results[:address] %>"><%= @results[:address] %></a></p>
     </div>
   <% end %>
 <% end %>
