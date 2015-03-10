@@ -8,7 +8,7 @@ require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 # Require gems we care about
 require 'rubygems'
 require 'hirb'
-
+require 'yelp'
 require 'uri'
 require 'pathname'
 require 'bcrypt'
@@ -40,6 +40,13 @@ configure do
   set :views, File.join(Sinatra::Application.root, "app", "views")
   Hirb.enable
 end
+
+client = Yelp::Client.new({ consumer_key: "WxrMdkHaoT5zlEUgndiB1A",
+                            consumer_secret: "4thgB6Fe_8ngMmWBA0p-fixxt2E",
+                            token: "oRefdhQLE6Viy2ZWeqS0xaCFzER0szI",
+                            token_secret: "JgyZvIBJ4_UMjGUoc7cx7PaCCxs"
+                          })
+
 
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
