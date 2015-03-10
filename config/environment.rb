@@ -16,6 +16,7 @@ require 'pg'
 require 'active_record'
 require 'logger'
 require 'rack-flash'
+require 'pry'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
@@ -41,11 +42,13 @@ configure do
   Hirb.enable
 end
 
-client = Yelp::Client.new({ consumer_key: "WxrMdkHaoT5zlEUgndiB1A",
-                            consumer_secret: "4thgB6Fe_8ngMmWBA0p-fixxt2E",
-                            token: "oRefdhQLE6Viy2ZWeqS0xaCFzER0szI",
-                            token_secret: "JgyZvIBJ4_UMjGUoc7cx7PaCCxs"
-                          })
+Yelp.client.configure do |config|
+  config.consumer_key = "WxrMdkHaoT5zlEUgndiB1A"
+  config.consumer_secret = "4thgB6Fe_8ngMmWBA0p-fixxt2E"
+  config.token = '8oRefdhQLE6Viy2ZWeqS0xaCFzER0szI'
+  config.token_secret = 'JgyZvIBJ4_UMjGUoc7cx7PaCCxs'
+end
+
 
 
 # Set up the controllers and helpers

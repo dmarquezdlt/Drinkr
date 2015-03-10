@@ -15,6 +15,7 @@ gem 'rake'
 gem 'hirb'
 gem 'rack-flash3'
 gem 'shotgun'
+gem 'pry'
 
 group :test do
   gem 'shoulda-matchers'

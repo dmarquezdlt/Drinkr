@@ -1,8 +1,30 @@
+
+
 $(document).ready(function() {
-  $('button').on('click', console.log("work"));
+  var current_location;
+
+
+
+  $('input[type=submit]').on('click', function(event){
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(function(position){
+      currentLat = position.coords.latitude;
+      currentLong = position.coords.longitude;
+
+      var returnLimit = 4;
+
+      $.ajax({
+        type:'post',
+        url:'/new_request',
+        data: {latitude: currentLat, longitude: currentLong, limit: returnLimit, bars: "All" , term: $('#search_term').val()}
+      }).done(function(data){
+        console.log("data:" + data);
+      });
+    });
+
+
+  });
 });
 
 
-var = current_location = navigator.geolocation.getCurrentPosition(function(position){
-  console.log("lat: " + position.coords.latitude + ". long: " +  position.coords.longitude)
-});
+
