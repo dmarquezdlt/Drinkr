@@ -1,9 +1,5 @@
-
-
 $(document).ready(function() {
   var current_location;
-
-
 
   $('input[type=submit]').on('click', function(event){
     event.preventDefault();
@@ -18,11 +14,10 @@ $(document).ready(function() {
         url:'/new_request',
         data: {latitude: currentLat, longitude: currentLong, limit: returnLimit, bars: "All" , term: $('#search_term').val()}
       }).done(function(data){
-        console.log("data:" + data);
+        $('#results').empty();
+        $('#results').append(data);
       });
     });
-
-
   });
 });
 

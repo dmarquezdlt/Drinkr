@@ -1,4 +1,9 @@
-<form action="/new_request" method="post">
+<form action="/new_request" method="post" class="request_form">
   <input type="text" name="term" id="search_term" placeholder="Moscow Mule?">
   <input type="submit" value="Drink">
 </form>
+<div id="results">
+
+  <%= erb :results  %>
+
+</div>
