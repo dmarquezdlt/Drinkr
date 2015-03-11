@@ -1,0 +1,17 @@
+<div class="business_listing">
+  <span class="favorites_user"><%= @user.name %></span>
+  <% if @user.favorites.empty? %>
+    No favs yet. Go find some great places.
+  <% else %>
+  <div class="favorites_list">
+    <ul class="favorites_list">
+    <% @user.favorites.each do |fav| %>
+      <li class="favorites_list"> <a href="<%= fav.business_url %>"><%= fav.business_name %></a></li>
+    <% end %>
+  </ul>
+  </div>
+  <% end %>
+  <a class='submit_button' href='/'>Find more cocktails</a>
+</div>
+
+

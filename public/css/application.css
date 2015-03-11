@@ -44,6 +44,31 @@ body {
   height: 150px;
 }
 
+.favorites {
+  width: 90%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.favorites_list {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1em;
+  font-weight: bolder;
+  text-decoration: none;
+  list-style-type: circle;
+  color: #DAF6F4;
+  text-align: left;
+}
+
+.favorites_user {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5em;
+  font-weight: bolder;
+  text-align: left;
+  margin-right: auto;
+}
+
+
 .fb-button {
   padding-top: 3px;
   display: inline-block;

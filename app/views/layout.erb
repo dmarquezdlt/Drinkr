@@ -16,16 +16,24 @@
   <meta property="og:description" content="Find your cocktail. Now."/>
 </head>
 <body>
-    <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
-    </div>
-    <div class="facebook">
-      <% if !session['oauth'][:access_token] %>
-        <a class='submit_button' href='/facebook'>facebook login</a> <span class="static_text">to save your favorite places!</span>
-      <% else %>
-        <a class='submit_button' href='/logout'>logout</a>
-        <a class='submit_button' href='/favorites'>favorites</a>
-      <% end %>
-    </div>
+  <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+  </div>
+  <div class="facebook">
+    <% if !session['oauth'][:access_token] %>
+    <a class='submit_button' href='/facebook'>facebook login</a> <span class="static_text">to save your favorite places!</span>
+    <% else %>
+    <a class='submit_button' href='/logout'>logout</a>
+    <a class='submit_button' href='/favorites'>favorites</a>
+    <% end %>
+  </div>
+
+  <div class="logo">
+    <h1 class="page_title"> Pour Me One </h1>
+    <svg height="210" width="150" class="drink">
+      <polygon points="0,0, 150,0, 80,60 80,150, 150,160, 0,160, 70,150, 70,60 " style="fill:#DAF6F4;fill-rule:nonzero;"/>
+      Sorry, your browser does not support inline SVG.
+    </svg>
+  </div>
   <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -35,21 +43,21 @@
     });
   };
   (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
 </script>
-  <div>
-    <%= yield %>
-  </div>
-  <footer>
+<div>
+  <%= yield %>
+</div>
+<footer>
 
-  </footer>
-  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script src="/js/application.js"></script>
+</footer>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/js/application.js"></script>
 
 </body>
 </html>

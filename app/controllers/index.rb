@@ -85,4 +85,15 @@ post "/other_request" do
   erb :_results, layout: false
 end
 
+get "/favorites" do
+  @user = User.find(session[:id])
+  p @user.name
+  erb :_favorites
+end
+
+post "/favorites/:name" do
+  Favorite.create!(business_name: params[:name], business_url: params.first[0], user_id:  session[:id])
+  redirect "/"
+end
+
 

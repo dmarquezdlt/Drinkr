@@ -1,4 +1,4 @@
-drinks = [
+@drinks = [
   "Dirty Martini",
   "Gibson",
   "Gimlet",
@@ -69,15 +69,14 @@ drinks = [
   "Amaretto Sour",
   "Boston Sidecar",
   "Brandy Alexander",
-  "Electric Lemonade  ",
   "Fuzzy Navel",
   "Harvey Wallbanger",
   "Long Island Iced Tea",
-  "Melon Ball  ",
-  "Metropolitan ",
+  "Melon Ball",
+  "Metropolitan",
   "Smith and Kearns"
 ]
 
-drinks.each do  |drink|
-  Drink.create(term:drink)
+@drinks.each do  |drink|
+  Drink.create!(term:drink)
 end

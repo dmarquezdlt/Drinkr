@@ -3,14 +3,23 @@
 <% end %>
 
 <% if @results %>
-    <div class="business_listing">
-       <% if @results[:closed] == true %> <p class="alert"> closed right now </p>
+  <div class="business_listing">
+    <% if @results[:closed] == true %>
+      <p class="alert"> closed right now </p>
+    <% end %>
+    <h3 class="business_name">
+      <a href="<%= @results[:url] %>"><%= @results[:name] %></a> | <%= "&#9733;"*@results[:rating].to_i %>
+    </h3>
+    <img src="<%= @results[:image] %>" class="business_pic"/>
+    <p><a href="http://maps.google.com/?q=<%=@results[:address] %>"><%= @results[:address] %></a></p>
+    <p><%= (@results[:distance]*0.000621371).round(2) %> miles away
+      <% if session['oauth'][:access_token] %>
+        <form action="/favorites/<%= @results[:name]%>" method="post">
+          <input class="submit_button" name="<%= @results[:url] %>" type="submit" value="Add to Favs">
+        </form>
       <% end %>
-      <h3 class="business_name"><a href="<%= @results[:url] %>"><%= @results[:name] %></a> | <%= @results[:rating].to_i %> stars</h3>
-      <img src="<%= @results[:image] %>" class="business_pic"/>
-      <p><a href="http://maps.google.com/?q=<%=@results[:address] %>"><%= @results[:address] %></a></p>
-      <p><%= (@results[:distance]*0.000621371).round(2) %> miles away </p>
-    </div>
+    </p>
+  </div>
 <% end %>
 
 
