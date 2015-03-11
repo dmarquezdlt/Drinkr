@@ -28,7 +28,6 @@ post "/new_request" do
   }
 
   @yelp_search = Yelp.client.search_by_coordinates(coordinates,parameters)
-  p @yelp_search
   @yelp_search.businesses.map! do |x|
     @results[:name] = x.name
     @results[:rating] = x.rating
@@ -39,7 +38,7 @@ post "/new_request" do
     @results[:description] = x.snippet_text
     @results[:distance] = x.distance
     @results[:closed] = x.is_closed
-    erb :_results
+    erb :_results, layout: false
   end
 end
 
@@ -55,6 +54,7 @@ post "/other_request" do
     sort: 1,
     limit: 1,
   }
+
   @drink = parameters[:term]
 
   @results = {
@@ -69,9 +69,8 @@ post "/other_request" do
     closed: nil
   }
 
-  yelp_search = Yelp.client.search_by_coordinates(coordinates,parameters)
-
-  yelp_search.businesses.map! do |x|
+  @yelp_search = Yelp.client.search_by_coordinates(coordinates,parameters)
+  @yelp_search.businesses.map! do |x|
     @results[:name] = x.name
     @results[:rating] = x.rating
     @results[:address] = x.location.display_address.join(", ")
@@ -81,8 +80,9 @@ post "/other_request" do
     @results[:description] = x.snippet_text
     @results[:distance] = x.distance
     @results[:closed] = x.is_closed
-    erb :_results
   end
+  @results
+  erb :_results, layout: false
 end
 
 

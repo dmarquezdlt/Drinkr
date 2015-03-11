@@ -1,9 +1,8 @@
 <% if @drink %>
-  <p class="static_text"> Drink a <%= @drink %> here: </p>
+  <p class="static_text"> Drink a '<%= @drink %>' here: </p>
 <% end %>
 
 <% if @results %>
-  <% if @results[:category].join("").include?("bar") || @results[:category].join("").include?("lounge") %>
     <div class="business_listing">
        <% if @results[:closed] == true %> <p class="alert"> closed right now </p>
       <% end %>
@@ -12,7 +11,6 @@
       <p><a href="http://maps.google.com/?q=<%=@results[:address] %>"><%= @results[:address] %></a></p>
       <p><%= (@results[:distance]*0.000621371).round(2) %> miles away </p>
     </div>
-  <% end %>
 <% end %>
 
 

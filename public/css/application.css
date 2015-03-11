@@ -21,12 +21,11 @@ body {
   color: #C8FAF6;
   margin:auto;
   font-family: 'Josefin Sans', sans-serif;
-  font-style: italic;
   font-weight: 100px;
   font-size: 1em;
   padding: 3px;
   text-align: center;
-
+  font-size: 1.5em;
 }
 /*the form that holds query space for user*/
 .request_form {
@@ -51,13 +50,14 @@ body {
 
 /*search button*/
 .submit_button {
-  margin: 20px;
+  margin-top: 10px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: .9em;
   background-color: #92c7c3;
   cursor: pointer;
   border:none;
   padding: 5px;
+  text-align: center;
 }
 
 .random_drink {
@@ -143,4 +143,10 @@ a {
 }
 .fb-button:hover {
   border: 1px solid red;
+}
+
+footer {
+  width: 100%;
+  display: block;
+  padding-top: 30px;
 }

@@ -6,13 +6,10 @@ $(document).ready(function() {
     navigator.geolocation.getCurrentPosition(function(position){
       currentLat = position.coords.latitude;
       currentLong = position.coords.longitude;
-
-      var returnLimit = 4;
-
       $.ajax({
         type:'post',
         url:'/new_request',
-        data: {latitude: currentLat, longitude: currentLong, limit: returnLimit, bars: "All" , term: $('#search_term').val()}
+        data: {latitude: currentLat, longitude: currentLong, term: $('#search_term').val()}
       }).done(function(data){
         $('#results').empty();
         $('#results').append(data);
@@ -22,23 +19,22 @@ $(document).ready(function() {
 
     $('button').on('click', function(event){
     event.preventDefault();
+    console.log("OTHER");
     navigator.geolocation.getCurrentPosition(function(position){
       currentLat = position.coords.latitude;
       currentLong = position.coords.longitude;
-
-      var returnLimit = 4;
-
       $.ajax({
         type:'post',
         url:'/other_request',
-        data: {latitude: currentLat, longitude: currentLong, limit: returnLimit, bars: "All"}
+        data: {latitude: currentLat, longitude: currentLong}
       }).done(function(data){
         $('#results').empty();
-        console.log(data.term)
+        console.log(data);
         $('#results').append(data);
       });
     });
   });
+
 });
 
 

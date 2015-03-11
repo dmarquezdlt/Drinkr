@@ -1,10 +1,4 @@
-<div class="facebook">
-    <% if !session['oauth'][:access_token] %>
-      <a class='submit_button' href='/facebook'>facebook login</a>
-      <% else %>
-      <a class='submit_button' href='/logout'>logout</a>
-    <% end %>
-</div>
+
 <div class="logo">
   <h1 class="page_title"> Pour Me One </h1>
   <svg height="210" width="150" class="drink">
@@ -18,9 +12,10 @@
 <form action="/new_request" method="post" class="request_form">
   <input type="text" name="term" id="search_term" placeholder="Moscow Mule?"><br>
   <input type="submit" class="submit_button" value="Drink this">
-  <button class="submit_button" action="/other_request" method="post" class="request_form">Pick a drink for me </button>
 </form>
-
+<div class="request_form">
+  <button class="submit_button" action="/other_request" method="post" >Pick a drink for me </button>
+</div>
 <div id="results">
   <%= erb :_results, :layout => false  %>
 </div>
