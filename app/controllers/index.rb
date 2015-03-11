@@ -24,10 +24,12 @@ post "/new_request" do
     image: nil,
     category: nil,
     description: nil,
-    distance: nil
+    distance: nil,
+    closed: nil
   }
 
   @yelp_search = Yelp.client.search_by_coordinates(coordinates,parameters)
+  p @yelp_search
   @yelp_search.businesses.map! do |x|
     @results[:name] = x.name
     @results[:rating] = x.rating
@@ -37,6 +39,7 @@ post "/new_request" do
     @results[:category] = x.categories
     @results[:description] = x.snippet_text
     @results[:distance] = x.distance
+    @results[:closed] = x.is_closed
     erb :_results
   end
 end

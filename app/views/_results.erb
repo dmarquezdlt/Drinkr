@@ -1,6 +1,8 @@
 <% if @results %>
-  <% if @results[:category].join("").include?("bar") %>
+  <% if @results[:category].join("").include?("bar") || @results[:category].join("").include?("lounge") %>
     <div class="business_listing">
+       <% if @results[:closed] == true %> <p class="alert"> closed right now </p>
+      <% end %>
       <h3 class="business_name"><a href="<%= @results[:url] %>"><%= @results[:name] %></a> | <%= @results[:rating].to_i %> stars</h3>
       <img src="<%= @results[:image] %>" class="business_pic"/>
       <p><a href="http://maps.google.com/?q=<%=@results[:address] %>"><%= @results[:address] %></a></p>
