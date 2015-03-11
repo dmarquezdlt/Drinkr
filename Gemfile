@@ -16,6 +16,7 @@ gem 'hirb'
 gem 'rack-flash3'
 gem 'shotgun'
 gem 'pry'
+gem 'dotenv'
 
 group :test do
   gem 'shoulda-matchers'

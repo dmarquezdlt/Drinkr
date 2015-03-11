@@ -1,3 +1,10 @@
+<div class="facebook">
+    <% if !session['oauth'][:access_token] %>
+      <a class='submit_button' href='/facebook'>facebook login</a>
+      <% else %>
+      <a class='submit_button' href='/logout'>logout</a>
+    <% end %>
+</div>
 <div class="logo">
   <h1 class="page_title"> Pour Me One </h1>
   <svg height="210" width="150" class="drink">
@@ -5,6 +12,8 @@
     Sorry, your browser does not support inline SVG.
   </svg>
   <p class="static_text">I really want to drink a...</p>
+</div>
+<div>
 </div>
 <form action="/new_request" method="post" class="request_form">
   <input type="text" name="term" id="search_term" placeholder="Moscow Mule?"><br>

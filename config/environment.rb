@@ -20,6 +20,8 @@ require 'pry'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
+require 'dotenv'
+Dotenv.load
 
 require 'erb'
 
@@ -43,10 +45,10 @@ configure do
 end
 
 Yelp.client.configure do |config|
-  config.consumer_key = "WxrMdkHaoT5zlEUgndiB1A"
-  config.consumer_secret = "4thgB6Fe_8ngMmWBA0p-fixxt2E"
-  config.token = '8oRefdhQLE6Viy2ZWeqS0xaCFzER0szI'
-  config.token_secret = 'JgyZvIBJ4_UMjGUoc7cx7PaCCxs'
+  config.consumer_key = ENV['YELP_CONSUMER_KEY']
+  config.consumer_secret = ENV['YELP_CONSUMER_SECRET']
+  config.token = ENV['YELP_TOKEN']
+  config.token_secret = ENV['YELP_TOKEN_SECRET']
 end
 
 
