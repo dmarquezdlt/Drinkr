@@ -19,6 +19,26 @@ $(document).ready(function() {
       });
     });
   });
+
+    $('button').on('click', function(event){
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(function(position){
+      currentLat = position.coords.latitude;
+      currentLong = position.coords.longitude;
+
+      var returnLimit = 4;
+
+      $.ajax({
+        type:'post',
+        url:'/other_request',
+        data: {latitude: currentLat, longitude: currentLong, limit: returnLimit, bars: "All"}
+      }).done(function(data){
+        $('#results').empty();
+        console.log(data.term)
+        $('#results').append(data);
+      });
+    });
+  });
 });
 
 

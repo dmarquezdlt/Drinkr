@@ -18,8 +18,14 @@
 <form action="/new_request" method="post" class="request_form">
   <input type="text" name="term" id="search_term" placeholder="Moscow Mule?"><br>
   <input type="submit" class="submit_button" value="Drink this">
+  <button class="submit_button" action="/other_request" method="post" class="request_form">Pick a drink for me </button>
 </form>
 
 <div id="results">
-  <%= erb :_results  %>
+  <%= erb :_results, :layout => false  %>
 </div>
+
+
+
+
+
