@@ -1,0 +1,12 @@
+<% if @results %>
+  <% if @results[:category].join("").include?("bar") %>
+    <div class="business_listing">
+      <h3 class="business_name"><a href="<%= @results[:url] %>"><%= @results[:name] %></a> | <%= @results[:rating].to_i %> stars</h3>
+      <img src="<%= @results[:image] %>" class="business_pic"/>
+      <p><a href="http://maps.google.com/?q=<%=@results[:address] %>"><%= @results[:address] %></a></p>
+      <p><%= (@results[:distance]*0.000621371).round(2) %> miles away </p>
+    </div>
+  <% end %>
+<% end %>
+
+

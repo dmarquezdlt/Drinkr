@@ -1,1 +1,111 @@
+body {
+  background: #428681;
+}
 
+/*name of page*/
+.page_title {
+  color: #DAF6F4;
+  width: 100%;
+  margin:auto;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 2.5em;
+  padding: 10px;
+}
+
+/*the form that holds query space for user*/
+.request_form {
+  width: 90%;
+  text-align: center;
+  margin:auto;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+/*the actual query space for user*/
+#search_term {
+  padding: 10px;
+  width: 30%;
+  background: #DAF6F4;
+  text-align: center;
+  border: 2px solid #619F9A;
+  margin:auto;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 1em;
+}
+
+
+/*search button*/
+.submit_button {
+  margin: 20px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: .9em;
+  background-color: #92c7c3;
+
+  cursor: pointer;
+  border:none;
+  padding: 5px;
+
+}
+
+a {
+  text-decoration: none;
+  color: #001614;
+}
+
+.submit_button:hover{
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+#results {
+  display: block;
+  width:100%;
+  margin: auto;
+}
+/*div of each listing*/
+.business_listing {
+  padding: 10px;
+  width: 550px;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background: #92c7c3;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+::-moz-selection {
+       background-color: #FFA;
+       color: #000;
+}
+
+::selection {
+       background-color: #FFA;
+       color: #000;
+}
+
+.logo{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.drink {
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+
+  border-top: 20px solid #f00;
+}
+
+.business_name {
+  color: #428681;
+}
+
+.business_pic {
+  width: 150px;
+  height: 150px;
+}

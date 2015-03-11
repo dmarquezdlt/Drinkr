@@ -23,7 +23,8 @@ post "/new_request" do
     url: nil,
     image: nil,
     category: nil,
-    description: nil
+    description: nil,
+    distance: nil
   }
 
   @yelp_search = Yelp.client.search_by_coordinates(coordinates,parameters)
@@ -35,7 +36,8 @@ post "/new_request" do
     @results[:image] = x.image_url
     @results[:category] = x.categories
     @results[:description] = x.snippet_text
-    erb :results
+    @results[:distance] = x.distance
+    erb :_results
   end
 end
 

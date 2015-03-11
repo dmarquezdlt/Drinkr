@@ -1,9 +1,15 @@
+<div class="logo">
+  <h1 class="page_title"> Pour Me One </h1>
+  <svg height="210" width="150" class="drink">
+    <polygon points="0,0, 150,0, 80,60 80,150, 150,160, 0,160, 70,150, 70,60 " style="fill:#DAF6F4;fill-rule:nonzero;"/>
+    Sorry, your browser does not support inline SVG.
+  </svg>
+</div>
 <form action="/new_request" method="post" class="request_form">
-  <input type="text" name="term" id="search_term" placeholder="Moscow Mule?">
-  <input type="submit" value="I want to drink this!">
+  <input type="text" name="term" id="search_term" placeholder="Moscow Mule?"><br>
+  <input type="submit" class="submit_button" value="Drink this">
 </form>
+
 <div id="results">
-
-  <%= erb :results  %>
-
+  <%= erb :_results  %>
 </div>
