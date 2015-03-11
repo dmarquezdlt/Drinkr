@@ -1,112 +1,10 @@
-body {
-  background: #428681;
-}
-
-/*name of page*/
-.page_title {
-  color: #DAF6F4;
-  width: 90%;
-  margin:auto;
-  font-family: 'Josefin Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 400;
-  font-size: 2.5em;
-  padding: 10px;
-
-}
-
-.alert {
-  color: red;
-}
-.static_text {
-  color: #C8FAF6;
-  margin:auto;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 100px;
-  font-size: 1em;
-  padding: 3px;
-  text-align: center;
-  font-size: 1.5em;
-}
-/*the form that holds query space for user*/
-.request_form {
-  width: 90%;
-  text-align: center;
-  margin:auto;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
-
-/*the actual query space for user*/
-#search_term {
-  padding: 10px;
-  width: 30%;
-  background: #DAF6F4;
-  text-align: center;
-  border: 2px solid #619F9A;
-  margin:auto;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 1em;
-}
-
-
-/*search button*/
-.submit_button {
-  margin-top: 10px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: .9em;
-  background-color: #92c7c3;
-  cursor: pointer;
-  border:none;
-  padding: 5px;
-  text-align: center;
-}
-
-.random_drink {
-
-}
-
 a {
   text-decoration: none;
   color: #001614;
 }
 
-.submit_button:hover{
-        box-shadow: 0 0 5px rgba(0,0,0,0.5);
-    }
-
-#results {
-  display: block;
-  width:100%;
-  margin: auto;
-}
-/*div of each listing*/
-.business_listing {
-  padding: 10px;
-  width: 550px;
-  margin: auto;
-  text-align: center;
-  margin-top: 10px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  background: #92c7c3;
-  box-shadow: 0 0 5px rgba(0,0,0,0.5);
-}
-
-::-moz-selection {
-       background-color: #FFA;
-       color: #000;
-}
-
-::selection {
-       background-color: #FFA;
-       color: #000;
-}
-
-.logo{
-  width: 100%;
-  margin: auto;
-  text-align: center;
-}
-
-.drink {
+.alert {
+  color: red;
 }
 
 .arrow-down {
@@ -118,6 +16,25 @@ a {
   border-top: 20px solid #f00;
 }
 
+body {
+  background: #428681;
+}
+
+.business_listing {
+  padding: 10px;
+  width: 550px;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background: #92c7c3;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.drink {
+}
+
+
 .business_name {
   color: #428681;
 }
@@ -126,6 +43,7 @@ a {
   width: 150px;
   height: 150px;
 }
+
 .fb-button {
   padding-top: 3px;
   display: inline-block;
@@ -141,6 +59,7 @@ a {
   margin-right: 10px;
   margin-left: 10px;
 }
+
 .fb-button:hover {
   border: 1px solid red;
 }
@@ -150,3 +69,82 @@ footer {
   display: block;
   padding-top: 30px;
 }
+
+.logo{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.page_title {
+  color: #DAF6F4;
+  width: 90%;
+  margin:auto;
+  font-family: 'Josefin Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 2.5em;
+  padding: 10px;
+}
+
+.request_form {
+  width: 90%;
+  text-align: center;
+  margin:auto;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#results {
+  display: block;
+  width:100%;
+  margin: auto;
+}
+
+#search_term {
+  padding: 10px;
+  width: 30%;
+  background: #DAF6F4;
+  text-align: center;
+  border: 2px solid #619F9A;
+  margin:auto;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 1em;
+}
+
+.static_text {
+  color: #C8FAF6;
+  margin:auto;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100px;
+  font-size: 1em;
+  padding-top: 20px;
+  padding-bottom: 3px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.submit_button {
+  margin-top: 10px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: .9em;
+  background-color: #92c7c3;
+  cursor: pointer;
+  border:none;
+  padding: 5px;
+  text-align: center;
+}
+
+.submit_button:hover{
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+
+::-moz-selection {
+ background-color: #FFA;
+ color: #000;
+}
+
+::selection {
+ background-color: #FFA;
+ color: #000;
+}
+
