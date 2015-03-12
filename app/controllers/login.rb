@@ -40,7 +40,7 @@ get "/fbcallback" do
   session[:oauth][:code] = params[:code]
 
   http = Net::HTTP.new "graph.facebook.com", 443
-  request = Net::HTTP::Get.new "/oauth/access_token?client_id=#{@client_id}&redirect_uri=http://#{@host}/fbcallback&client_secret=#{@client_secret}&code=#{session[:oauth][:code]}"
+  request = Net::HTTP::Get.new "/oauth/access_token?client_id=#{@client_id}&redirect_uri=https://#{@host}/fbcallback&client_secret=#{@client_secret}&code=#{session[:oauth][:code]}"
   http.use_ssl = true
   response = http.request request
 
