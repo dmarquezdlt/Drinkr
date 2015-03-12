@@ -21,11 +21,11 @@ body {
 }
 
 .business_listing {
-  padding: 10px;
+  padding: 1%;
   width: 550px;
   margin: auto;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 1%;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   background: #92c7c3;
   box-shadow: 0 0 5px rgba(0,0,0,0.5);
@@ -44,6 +44,12 @@ body {
   height: 150px;
 }
 
+
+.login_bar {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1em;
+  padding-top: 1%;
+}
 .favorites {
   width: 90%;
   margin-left: 20%;
@@ -58,6 +64,7 @@ body {
   list-style-type: circle;
   color: #DAF6F4;
   text-align: left;
+   margin: 5%;
 }
 
 .favorites_user {

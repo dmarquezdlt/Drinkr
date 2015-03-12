@@ -1,7 +1,9 @@
 <div class="business_listing">
   <span class="favorites_user"><%= @user.name %></span>
   <% if @user.favorites.empty? %>
+  <div class="favorites_list">
     No favs yet. Go find some great places.
+  </div>
   <% else %>
   <div class="favorites_list">
     <ul class="favorites_list">

@@ -16,9 +16,14 @@
   <meta property="og:description" content="Find your cocktail. Now."/>
 </head>
 <body>
-  <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+  <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
   </div>
-  <div class="facebook">
+  <div class="login_bar">
     <% if !session['oauth'][:access_token] %>
     <a class='submit_button' href='/facebook'>facebook login</a> <span class="static_text">to save your favorite places!</span>
     <% else %>
@@ -35,21 +40,22 @@
     </svg>
   </div>
   <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '450194348463545',
-      xfbml      : true,
-      version    : 'v2.2'
-    });
-  };
-  (function(d, s, id){
-   var js, fjs = d.getElementsByTagName(s)[0];
-   if (d.getElementById(id)) {return;}
-   js = d.createElement(s); js.id = id;
-   js.src = "//connect.facebook.net/en_US/sdk.js";
-   fjs.parentNode.insertBefore(js, fjs);
- }(document, 'script', 'facebook-jssdk'));
-</script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '450194348463545',
+        xfbml      : true,
+        version    : 'v2.2'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
 <div>
   <%= yield %>
 </div>
