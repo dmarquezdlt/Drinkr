@@ -22,6 +22,7 @@ get "/facebook" do
     request = Net::HTTP::Get.new "/me?access_token=#{session[:oauth][:access_token]}"
     http.use_ssl = true
     response = http.request request
+
     url = "https://graph.facebook.com/me?fields=id,name,email&access_token=#{session[:oauth][:access_token]}"
     fb_user_info = JSON.parse(open(url).read)
     # Find or create user in app's DB
@@ -32,7 +33,7 @@ get "/facebook" do
 end
 
 get "/request" do
-  redirect "https://graph.facebook.com/oauth/authorize?client_id=#{@client_id}&redirect_uri=http://#{@host}/fbcallback"
+  redirect "https://graph.facebook.com/oauth/authorize?client_id=#{@client_id}&redirect_uri=https://#{@host}/fbcallback"
 end
 
 get "/fbcallback" do
